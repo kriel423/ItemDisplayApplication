@@ -4,12 +4,13 @@ public class Upload {
     private String mTitle;
     private String mDescription;
     private String mQuanitity;
+    private String mPrice;
     private String mImageUrl;
 
     public Upload()
     {}
 
-    public Upload(String title, String description, String quantity, String imageUrl)
+    public Upload(String title, String description, String quantity, String price, String imageUrl)
     {
         if(title.trim().equals(""))
         {
@@ -19,6 +20,7 @@ public class Upload {
         mTitle = title;
         mDescription = description;
         mQuanitity = quantity;
+        mPrice = price;
         mImageUrl = imageUrl;
     }
 
@@ -52,5 +54,13 @@ public class Upload {
 
     public void setmImageUrl(String mImageUrl) {
         this.mImageUrl = mImageUrl;
+    }
+
+    public String getmPrice() {
+        return mPrice;
+    }
+
+    public void setmPrice(String mPrice) {
+        this.mPrice = mPrice;
     }
 }

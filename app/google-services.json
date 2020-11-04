@@ -42,6 +42,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148251063568:android:c33646ea2c192216b4e195",
+        "android_client_info": {
+          "package_name": "com.pluralsight.pictureuploadtestapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148251063568-a4uujfn6l3vpp0gb6pr3koe14fsefe8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCQj1hlXOZ-3HzGbywTcPKqoAFkFR6bu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148251063568-a4uujfn6l3vpp0gb6pr3koe14fsefe8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

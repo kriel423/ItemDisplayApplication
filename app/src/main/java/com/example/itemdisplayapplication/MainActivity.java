@@ -33,11 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
-    private Button mButtonViewItems;
-    private Button mButtonUpload;
+    private Button mButtonItemUpload;
+    private Button mButtonPhotoUpload;
     private TextView mTextViewFileName;
     private TextView mTextDescription;
     private TextView mTextQuantity;
+    private TextView mTextPrice;
     private TextView mTextViewShowUploads;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
@@ -54,19 +55,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mButtonUpload = findViewById(R.id.button_upload);
-        mButtonViewItems = findViewById(R.id.view_items_button);
-        mTextViewShowUploads = findViewById(R.id.view_items_button);
+        mButtonPhotoUpload = findViewById(R.id.button_upload_photo);
+        mButtonItemUpload = findViewById(R.id.upload_items_button);
+        mTextViewShowUploads = findViewById(R.id.text_view_items);
         mTextViewFileName = findViewById(R.id.edit_text_title);
         mTextDescription = findViewById(R.id.edit_text_description);
         mTextQuantity = findViewById(R.id.edit_text_quantity);
+   //     mTextPrice = findViewById(R.id.ed)
         mProgressBar = findViewById(R.id.progressBar);
         mImageView = findViewById(R.id.image_upload);
 
         mStorageReference = FirebaseStorage.getInstance().getReference("uploads");
         mDatabaseReference = FirebaseDatabase.getInstance().getReference("uploads");
 
-        mButtonUpload.setOnClickListener(new View.OnClickListener() {
+        mButtonPhotoUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(mUploadTask != null && mUploadTask.isInProgress())
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mButtonViewItems.setOnClickListener(new View.OnClickListener() {
+        mButtonItemUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 uploadFile();
@@ -89,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         mTextViewShowUploads.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openItemsActivity();
             }
         });
 
@@ -151,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
                     Upload upload = new Upload(mTextViewFileName.getText().toString().trim(),
                             mTextDescription.getText().toString().trim(),
                             mTextQuantity.getText().toString().trim(),
+                            mTextPrice.getText().toString().trim(),
                             taskSnapshot.getMetadata().getReference().getDownloadUrl().toString());
                     String uploadId = mDatabaseReference.push().getKey();
                     mDatabaseReference.child(uploadId).setValue(upload);
@@ -172,5 +175,11 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast.makeText(this, "No file selected", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void openItemsActivity()
+    {
+        Intent intent = new Intent(this, ItemActivity.class);
+        startActivity(intent);
     }
 }

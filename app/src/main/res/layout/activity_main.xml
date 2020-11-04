@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="Title"
+            android:hint="Title"
             android:textAlignment="center"
             android:textSize="24sp"
             android:layout_marginTop="20dp"
@@ -36,10 +36,10 @@
             app:srcCompat="@android:drawable/ic_menu_report_image" />
 
         <Button
-            android:id="@+id/button_upload"
+            android:id="@+id/button_upload_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Upload Item"
+            android:text="Upload Photo"
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
             android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="number"
-            android:text="Quantity"
+            android:hint="Quantity"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,21 +65,21 @@
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine"
-            android:text="Description"
+            android:hint="Description"
             android:textAlignment="gravity"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_upload" />
+            app:layout_constraintTop_toBottomOf="@+id/button_upload_photo" />
 
         <Button
-            android:id="@+id/view_items_button"
+            android:id="@+id/upload_items_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="16dp"
-            android:text="View Items"
+            android:text="Upload Item"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
@@ -100,6 +100,19 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_price" />
+
+        <EditText
+            android:id="@+id/edit_text_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:hint="Price (R)"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_quantity" />
